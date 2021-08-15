@@ -1,0 +1,34 @@
+{
+  "P000": {
+    "pkg": "P000",
+    "data": {
+      "status": 0
+    }
+  },
+  "P001": {
+    "pkg": "P001",
+    "data": {
+      "status": 45
+    }
+  },
+  "P002": {
+    "pkg": "P002",
+    "data": {
+      "status": 5
+    }
+  },
+  "P003, manual": {
+    "pkg": "P003",
+    "data": {
+      "auto": false,
+      "status": 5
+    }
+  },
+  "P003, auto": {
+    "pkg": "P003",
+    "data": {
+      "auto": true,
+      "status": 5
+    }
+  }
+}

@@ -1,0 +1,41 @@
+﻿<Window x:Class="PacketHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PacketHelper"
+        mc:Ignorable="d"
+        ResizeMode="CanResize"
+        Height="500" Width="300"
+        Icon="icon.ico">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" Name="cbox_packets" SelectionChanged="Cbox_packets_SelectionChanged"/>
+        <Grid Grid.Row="2" Background="PapayaWhip">
+            <RichTextBox Height="180" Name="rtxt_input"
+                         Background="Transparent" BorderThickness="0" Margin="10"
+                         TextChanged="rtxt_input_TextChanged">
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="0"/>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+        </Grid>
+        <Grid Grid.Row="4" ToolTip="Click me to copy texts to the clipboard!">
+            <Rectangle Fill="PowderBlue"/>
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="10">
+                <TextBlock Name="text_output" TextWrapping="Wrap"/>
+            </Grid>
+            <Label Name="label_message" Foreground="SteelBlue"
+                   FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Rectangle Fill="Transparent" PreviewMouseDown="text_output_PreviewMouseDown"/>
+        </Grid>
+    </Grid>
+</Window>
